@@ -1,4 +1,4 @@
-name: nodeproject using service principle
+name:  Using SP
 
 on: [push]
 env:
