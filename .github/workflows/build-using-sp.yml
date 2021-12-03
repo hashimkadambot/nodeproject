@@ -33,7 +33,7 @@ jobs:
     - name: 'Deploy to Azure WebApp'
       uses: azure/login@v1
       with:
-        creds: ${{ secrets.AZUE_CREDENTIAL_1 }}
+        creds: ${{ secrets.AZURE_FREE_LEARN }}
         
     - uses: azure/webapps-deploy@v2
       with: 
