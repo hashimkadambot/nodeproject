@@ -15,16 +15,14 @@ jobs:
         expected: '[200]'
     - name: Set failure actions
       if: ${{ failure() }}
+      run: echo ":("
       env:
           DEPLOY_STATUS: FAIL
           
     - name: Set suceess actions
       if: ${{ success() }}
+      run: echo ":)"
       env:
           DEPLOY_STATUS: SUCESS
           
-    - name: display result
-      run: echo ${{env.DEPLOY_STATUS}} 
-      
    
-
