@@ -23,6 +23,3 @@ jobs:
       if: ${{ success() }}
       env:
           DEPLOY_STATUS: SUCCESS
-    
-    - name: Set suceess actions 2
-      run: echo $DEPLOY_STATUS
