@@ -30,7 +30,7 @@ jobs:
       with:
         server_address: smtp.office365.com
         server_port: 587
-        username: ${{secrets.MAIL_ID1}}
+        username: ${{secrets.MAIL_ID_1}}
         password: ${{secrets.MAIL_PASS}}
         subject: Get HTTP Status
         to: mail.hashim@gmail.com
