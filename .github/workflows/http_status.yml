@@ -23,4 +23,4 @@ jobs:
       if: ${{ success() }}
       env:
           DEPLOY_STATUS: SUCESS
-      run: echo ${env.DEPLOY_STATUS}
+      run: echo $DEPLOY_STATUS
