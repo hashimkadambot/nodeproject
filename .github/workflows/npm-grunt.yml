@@ -14,3 +14,10 @@ jobs:
       with:
         sites: '["https://infra-node-sample.azurewebsites.net/"]'
         expected: '[200]'
+    - name: Set PR status to failure
+      if: ${{ failure() }}
+      run: echo ":("
+    - name: Set PR status to suceess
+      if: ${{ sucess() }}
+      run: echo ":)"
+
