@@ -22,6 +22,4 @@ jobs:
       if: ${{ success() }}
       env:
           DEPLOY_STATUS: SUCESS
-    - name: Test Result Echo
-      run: echo env.DEPLOY_STATUS
    
