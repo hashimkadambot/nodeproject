@@ -17,9 +17,8 @@ jobs:
         expected: '[200]'
     - name: Set failure actions
       if: ${{ failure() }}
-      run: echo ":("
-      env:
-          DEPLOY_STATUS: FAIL
+      run: |
+          echo "DEPLOY_STATUS=FAILED" >> $GITHUB_ENV
           
     - name: Set suceess actions
       if: ${{ success() }}
