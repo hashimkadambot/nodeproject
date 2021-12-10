@@ -6,6 +6,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+          DEPLOY_STATUS: NONE
     steps:
     # ... uses ....
     - name: Check http status code of production site
@@ -21,9 +23,8 @@ jobs:
           
     - name: Set suceess actions
       if: ${{ success() }}
-      run: echo ":)"
-      env:
-          DEPLOY_STATUS: SUCESS
+      run: |
+          echo "DEPLOY_STATUS=SUCCESS" >> $GITHUB_ENV
           
     - name: Send mail
       uses: dawidd6/action-send-mail@v3
