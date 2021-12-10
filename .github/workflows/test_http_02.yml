@@ -28,12 +28,12 @@ jobs:
     - name: Send mail
       uses: dawidd6/action-send-mail@v3
       with:
-        server_address: smtp.office365.com
-        server_port: 587
+        server_address: smtp.sendgrid.net
+        server_port: 465
         username: ${{secrets.MAIL_ID_1}}
-        password: ${{secrets.MAIL_PASS}}
-        subject: Get HTTP Status
+        password: ${{secrets.MAIL_PASS_1}}
+        subject: HTTP Status Update
         to: mail.hashim@gmail.com
-        from: Hashim Kadambot <hashim@coolmail.co.in>
+        from: Hashim Kadambot <mynameishashim@gmail.com>
         secure: true
         body: ${{ env.DEPLOY_STATUS}}
