@@ -36,4 +36,4 @@ jobs:
         to: mail.hashim@gmail.com
         from: Hashim Kadambot <mynameishashim@gmail.com>
         secure: true
-        body: Result $DEPLOY_STATUS 
+        body: ${DEPLOY_STATUS}
