@@ -34,6 +34,6 @@ jobs:
         password: ${{secrets.MAIL_PASS}}
         subject: Get HTTP Status
         to: mail.hashim@gmail.com
-        from: Hashim Kadambot # <mynameishashim@gmail.com>
+        from: Hashim Kadambot <mynameishashim@gmail.com>
         secure: true
         body: Result $DEPLOY_STATUS 
