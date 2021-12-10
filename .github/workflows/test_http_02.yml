@@ -22,8 +22,8 @@ jobs:
       if: ${{ success() }}
       env:
           DEPLOY_STATUS: SUCESS
-		  
-	- name: Display Result
+	  
+    - name: Display Result
       run: echo $DEPLOY_STATUS
                 
     - name: Send mail
