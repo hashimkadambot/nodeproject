@@ -1,4 +1,4 @@
-name: Testing HTTP Status with Email 2
+name: Testing HTTP Status with Email
 
 on:
   workflow_dispatch:
