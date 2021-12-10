@@ -24,4 +24,17 @@ jobs:
       run: echo ":)"
       env:
           DEPLOY_STATUS: SUCESS
+          
+    - name: Send email
+      uses: devellany/send-mailer@v1.0.2
+      with:
+        host: smtp.google.com
+        port: 465
+        account: ${{secrets.MAIL_ID}}
+        password: ${{secrets.PASS}}
+        sender: Hashim
+        from: ${{secrets.MAIL_ID}}
+        to: devellay@dico.me
+        subject: mail title.
+        body: your messages.
 
