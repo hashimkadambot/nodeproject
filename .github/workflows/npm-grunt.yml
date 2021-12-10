@@ -18,6 +18,6 @@ jobs:
       if: ${{ failure() }}
       run: echo ":("
     - name: Set PR status to suceess
-      if: ${{ sucess() }}
+      if: ${{ success() }}
       run: echo ":)"
 
