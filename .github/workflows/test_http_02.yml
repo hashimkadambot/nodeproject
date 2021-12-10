@@ -13,4 +13,16 @@ jobs:
       with:
         sites: '["https://infra-node-sample.azurewebsites.net/"]'
         expected: '[200]'
- 
+    
+    - name: Set failure actions
+      if: ${{ failure() }}
+      env:
+          DEPLOY_STATUS: FAIL
+    
+    - name: Set suceess actions
+      if: ${{ success() }}
+      env:
+          DEPLOY_STATUS: SUCCESS
+    
+    - name: Set suceess actions
+      run: echo $DEPLOY_STATUS
