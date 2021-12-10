@@ -1,6 +1,6 @@
 name: Build and Deploy using publish profile
 on:
-  push
+  workflow_dispatch
     
 env:
   AZURE_WEBAPP_NAME: infra-node-sample   # set this to your application's name
