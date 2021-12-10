@@ -2,7 +2,7 @@ name: Testing HTTP Status with Email
 
 on:
   workflow_dispatch:
-  
+ 
 jobs:
   build:
     runs-on: ubuntu-latest
