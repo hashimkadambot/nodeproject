@@ -2,8 +2,7 @@ name: Testing HTTP Status
 
 on:
   workflow_dispatch:
-   
-
+ 
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,10 +13,10 @@ jobs:
       with:
         sites: '["https://infra-node-sample.azurewebsites.net/"]'
         expected: '[200]'
-    - name: Set PR status to failure
+    - name: Set failure actions
       if: ${{ failure() }}
       run: echo ":("
-    - name: Set PR status to suceess
+    - name: Set suceess actions
       if: ${{ success() }}
       run: echo ":)"
 
