@@ -25,16 +25,16 @@ jobs:
       env:
           DEPLOY_STATUS: SUCESS
           
-    - name: Send email
-      uses: devellany/send-mailer@v1.0.2
+    - name: Send mail
+      uses: dawidd6/action-send-mail@v3
       with:
-        host: smtp.google.com
-        port: 465
-        account: ${{secrets.MAIL_ID}}
-        password: ${{secrets.PASS}}
-        sender: Hashim
-        from: ${{secrets.MAIL_ID}}
-        to: ${{secrets.MAIL_ID}}
-        subject: Deployment Status
-        body: env.DEPLOY_STATUS
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: ${{secrets.MAIL_ID}}
+        password: ${{secrets.MAIL_PASS}}
+        subject: Get HTTP Status
+        to: mail.hashim@gmail.com
+        from: Hashim Kadambot # <mynameishashim@gmail.com>
+        secure: true
+        body: Result ${{env.DEPLOY_STATUS}}    
 
