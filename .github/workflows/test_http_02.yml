@@ -34,6 +34,6 @@ jobs:
         password: ${{secrets.MAIL_PASS_1}}
         subject: HTTP Status Update
         to: mail.hashim@gmail.com
-        from: Hashim Kadambot <mynameishashim@gmail.com>
+        from: mynameishashim@gmail.com
         secure: true
         body: ${{ env.DEPLOY_STATUS}}
