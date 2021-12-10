@@ -13,17 +13,18 @@ jobs:
       with:
         sites: '["https://infra-node-sample.azurewebsites.net/"]'
         expected: '[200]'
+    
     - name: Set failure actions
       if: ${{ failure() }}
       env:
           DEPLOY_STATUS: FAIL
-          
+    
     - name: Set suceess actions
       if: ${{ success() }}
       env:
-          DEPLOY_STATUS: SUCESS
-	  
-    - name: Display Result
+          DEPLOY_STATUS: SUCCESS
+    
+    - name: Set suceess actions
       run: echo $DEPLOY_STATUS
                 
     - name: Send mail
@@ -35,6 +36,6 @@ jobs:
         password: ${{secrets.MAIL_PASS}}
         subject: Get HTTP Status
         to: mail.hashim@gmail.com
-        from: Hashim Kadambot # <mynameishashim@gmail.com>
+        from: Hashim Kadambot <mynameishashim@gmail.com>
         secure: true
         body: Result $DEPLOY_STATUS    
