@@ -2,4 +2,15 @@ name: Testing HTTP Status with Email
 
 on:
   workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    # ... uses ....
+    - name: Check http status code of production site
+      uses: lakuapik/gh-actions-http-status@v1
+      with:
+        sites: '["https://infra-node-sample.azurewebsites.net/"]'
+        expected: '[200]'
  
