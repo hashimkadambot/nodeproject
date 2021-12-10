@@ -3,39 +3,3 @@ name: Testing HTTP Status with Email
 on:
   workflow_dispatch:
  
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    # ... uses ....
-    - name: Check http status code of production site
-      uses: lakuapik/gh-actions-http-status@v1
-      with:
-        sites: '["https://infra-node-sample.azurewebsites.net/"]'
-        expected: '[200]'
-    
-    - name: Set failure actions
-      if: ${{ failure() }}
-      env:
-          DEPLOY_STATUS: FAIL
-    
-    - name: Set suceess actions
-      if: ${{ success() }}
-      env:
-          DEPLOY_STATUS: SUCCESS
-    
-    - name: Set suceess actions
-      run: echo $DEPLOY_STATUS
-                
-    - name: Send mail
-      uses: dawidd6/action-send-mail@v3
-      with:
-        server_address: smtp.gmail.com
-        server_port: 465
-        username: ${{secrets.MAIL_ID}}
-        password: ${{secrets.MAIL_PASS}}
-        subject: Get HTTP Status
-        to: mail.hashim@gmail.com
-        from: Hashim Kadambot <mynameishashim@gmail.com>
-        secure: true
-        body: Result $DEPLOY_STATUS    
